@@ -11,7 +11,7 @@ import java.text.ParseException;
  * @author HP
  */
 public class giaoDichTienTe extends giaoDich{
-    private double tiGia;
+    private double tiGia, thanhTien;
     private String tienTe;
     private int number;
 
@@ -19,11 +19,12 @@ public class giaoDichTienTe extends giaoDich{
         super();
     }
 
-    public giaoDichTienTe(double tiGia, String tienTe, int number) {
+    public giaoDichTienTe(double tiGia, String tienTe, int number, double thanhTien) {
         super();
         this.tiGia = tiGia;
         this.tienTe = tienTe;
         this.number = number;
+        this.thanhTien = thanhTien;
     }
 
     public double getTiGia() {
@@ -51,28 +52,11 @@ public class giaoDichTienTe extends giaoDich{
     }
 
     
-    public String tienTE(int x) {
-        switch (number) {
-            case 0:
-                tienTe = "VND";
-                break;
-            case 1:
-                tienTe = "USD";
-                break;
-            case 2:
-                tienTe = "EURO";
-                break;
-            default:
-                break;
-        }
-        return tienTe;
-    }
-    
     public void nhapGD () throws ParseException{
         super.nhapGD();
         System.out.println("Nhập tỉ giá: ");
         tiGia = scanner.nextDouble();
-        System.out.println("Nhập loại tiền tệ(0-VND/1-USD/2-EURO)");
+        System.out.println("Nhập loại tiền tệ(VND/USD/EURO)");
         number = scanner.nextInt();
     }
 

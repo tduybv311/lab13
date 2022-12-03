@@ -12,9 +12,12 @@ import java.text.ParseException;
  */
 public class giaoDichVang extends giaoDich {
     private String loaiVang;
-
-    public giaoDichVang(String loaiVang) {
+    private double thanhTien;
+    
+    public giaoDichVang(String loaiVang, double thanhTien) {
+        super();
         this.loaiVang = loaiVang;
+        this.thanhTien = thanhTien;
     }
 
     public giaoDichVang() {
